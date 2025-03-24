@@ -9,6 +9,20 @@
 		
 	</head>
 	<body>
+		<button onclick="changeFontSize('aumentar')">Aumentar</button>
+		<button onclick="changeFontSize('reduzir')">Reduzir</button><script>
+function changeFontSize(action){
+const elements = ['h1','h2','p'];
+elements.map(element=>{
+
+const selector = document.querySelector(element);
+let value = getComputedStyle(selector).getPropertyValue('font-size');
+value = value.replace('px', '');
+value = action === 'aumentar' ? parseInt(value) + 1 : parseInt(value) - 1;
+selector.style.fontSize = `${value}px`;
+})
+}
+</script>
 		<audio autoplay>
 			<source src="lovegames.mp3" />
 		</audio>
@@ -97,6 +111,19 @@
 		<footer style="font-size:10px; text-align:center;margin-top:-15px;color:#999999;">
 			<p>Feito por: Kelvin Theodoro Dantas.</p>
 		</footer>
-		
+		<button onclick="changeFontSize('aumentar')">Aumentar</button>
+		<button onclick="changeFontSize('reduzir')">Reduzir</button><script>
+function changeFontSize(action){
+const elements = ['h1', 'p'];
+elements.map(element=>{
+
+const selector = document.querySelector(element);
+let value = getComputedStyle(selector).getPropertyValue('font-size');
+value = value.replace('px', '');
+value = action === 'aumentar' ? parseInt(value) + 1 : parseInt(value) - 1;
+selector.style.fontSize = `${value}px`;
+})
+}
+</script>
 	</body>
 </html>
